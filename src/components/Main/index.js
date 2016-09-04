@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import Map from '../Map';
 import UserList from '../UserList';
 
-@inject('userList') @observer
+@inject('userLocationListStore') @observer
 
 export default class Main extends React.Component {
 
@@ -12,10 +12,10 @@ export default class Main extends React.Component {
   }
 
   render() {
-    const { userListStore } = this.props;
+    const { userLocationListStore } = this.props;
     return (
       <div>
-        <Map markers={userListStore.userList}/>
+        <Map markers={userLocationListStore.locationList}/>
         <UserList/>
       </div>
     );

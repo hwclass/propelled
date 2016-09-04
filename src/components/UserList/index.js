@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import User from '../../components/User';
 import uuid from 'uuid';
 
-@inject('userListStore') @observer
+@inject('userLocationListStore') @observer
 
 export default class UserList extends React.Component {
 
@@ -12,11 +12,11 @@ export default class UserList extends React.Component {
   }
 
   render() {
-    const { userListStore } = this.props;
+    const { userLocationListStore } = this.props;
     return (
       <div>
         {
-          userListStore.userList.map((user) => {
+          userLocationListStore.locationList.map((user) => {
             return <User key={uuid.v1()} name={user.name} lat={user.lat} lng={user.lng} location={user.location}/>;
           })
         }

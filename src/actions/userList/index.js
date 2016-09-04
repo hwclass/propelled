@@ -1,11 +1,11 @@
 // import { apiUrl } from '../../services/api';
-import { userList } from '../../stores/userList/';
+import { userLocationListStore } from '../../stores/';
 
 export const updateUserList = () => {
   fetch('http://demo1455086.mockable.io/users/locations/')
     .then(response => response.json())
     .then((data) => {
-      userList.mergeUserList(data);
+      userLocationListStore.setLocationList(data);
     });
 
 
