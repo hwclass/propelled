@@ -1,8 +1,11 @@
-var webpack = require('webpack');
+var webpack = require('webpack'),
+    precss = require('precss'),
+    autoprefixer = require('autoprefixer'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://localhost:8083',
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
@@ -20,12 +23,23 @@ module.exports = {
       loader: 'react-hot!babel'
     },
     {
-      test: /\.scss$/,
-      loader: 'style!css!sass'
+      test:   /\.scss$/,
+      loader: "style-loader!css-loader!postcss-loader"
     }]
   },
+  postcss: function () {
+    return [precss, autoprefixer];
+  },
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
+  postcss: [
+    autoprefixer({
+      browsers: ['last 2 versions']
+    })
+  ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
   output: {
     path: __dirname + '/dist',
