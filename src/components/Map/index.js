@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps";
+import * as actions from '../../actions/';
 import uuid from 'uuid';
 
 import './style/index.scss';
@@ -8,6 +9,10 @@ export default class Map extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    actions.updateUserList();
   }
 
   getRandomKey() {

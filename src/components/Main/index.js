@@ -1,8 +1,9 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 import Map from '../Map';
+import UserList from '../UserList';
 
-@inject('userListStore') @observer
+@inject('userList') @observer
 
 export default class Main extends React.Component {
 
@@ -15,6 +16,7 @@ export default class Main extends React.Component {
     return (
       <div>
         <Map markers={userListStore.userList}/>
+        <UserList/>
       </div>
     );
   }

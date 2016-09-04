@@ -1,5 +1,5 @@
-import userListStore from './userListStore';
+import userList from './userList';
 
 export {
-  userListStore
+  userList
 };
