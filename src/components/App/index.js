@@ -1,18 +1,19 @@
 import React from 'react';
-import Header from '../../components/Header';
-import UserList from '../../components/UserList';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default class App extends React.Component {
 
   render() {
-    const { location, children } = this.props;
-    const { pathname, query } = location;
+    // const { location, children } = this.props;
+    const { children } = this.props;
+    // const { pathname, query } = location;
 
     return (
       <div>
-        <Header genre={genre} pathname={pathname} />
-          {children}
-        <Userlist />
+        <Header/>
+		{children}
+        <Footer />
       </div>
     );
   }

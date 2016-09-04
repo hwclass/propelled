@@ -9,6 +9,17 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'src/**/spec.js'",
     "test:watch": "npm run test -- --watch"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hwclass/propelled.git"
