@@ -1,17 +1,19 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps";
 import * as actions from '../../actions/';
 import uuid from 'uuid';
 
 import './style/index.scss';
 
-export default class Map extends React.Component {
+@inject('userLocationListStore') @observer
+class Map extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     actions.updateUserList();
   }
 
@@ -20,6 +22,7 @@ export default class Map extends React.Component {
   }
 
   render() {
+    const { userLocationListStore } = this.props;
     return (
       <section id="map">
         <GoogleMapLoader
@@ -36,14 +39,16 @@ export default class Map extends React.Component {
               key={() => uuid.v1()}
               defaultZoom={1}
               defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
-              onClick={this.props.onMapClick}
             >
-              {this.props.markers.map((marker, index) => {
+              {userLocationListStore.locationList.map((marker, index) => {
                 return (
                   <Marker
-                    key={() => this.getRandomKey()}
-                    {...marker}
-                    onRightclick={() => this.props.onMarkerRightclick(index)}
+                    key={index}
+                    name={marker.name}
+                    lat={marker.lat}
+                    lng={marker.lng}
+                    defaultAnimation={marker.defaultAnimation}
+                    zoom={marker.zoom}
                   />
                 );
               })}
@@ -53,5 +58,6 @@ export default class Map extends React.Component {
       </section>
     );
   }
-
 }
+
+export default Map;
