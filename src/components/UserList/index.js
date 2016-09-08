@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
-import User from '../../components/User';
+import User from '../../components/User/';
 import uuid from 'uuid';
 
 @inject('userLocationListStore') @observer

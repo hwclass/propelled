@@ -1,5 +1,6 @@
-import { updateUserList } from './userList';
+import { updateUserList, saveUser } from './userList';
 
 export {
-  updateUserList
+  updateUserList,
+  saveUser
 };

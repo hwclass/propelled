@@ -21,8 +21,8 @@ export default class User extends React.Component {
 
 User.propTypes = {
   name: React.PropTypes.string.isRequired,
-  lat: React.PropTypes.number.isRequired,
-  lng: React.PropTypes.number.isRequired,
+  lat: React.PropTypes.string.isRequired,
+  lng: React.PropTypes.string.isRequired,
   location: React.PropTypes.string.isRequired,
   defaultAnimation: React.PropTypes.string,
   zoom: React.PropTypes.string

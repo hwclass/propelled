@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx';
 import { forEach, remove, isUndefined } from 'lodash';
+import { DEFAULT_ANIMATION, ZOOM } from '../../constants/map';
 
 class UserLocationListStore {
 
@@ -7,8 +8,8 @@ class UserLocationListStore {
 
   constructor() {
     this.locationList = [];
-    this.defaultAnimation = 2;
-    this.zoom = 1;
+    this.defaultAnimation = DEFAULT_ANIMATION;
+    this.zoom = ZOOM;
   }
 
   @action setLocationList(locationList) {
@@ -17,13 +18,18 @@ class UserLocationListStore {
       this.locationList.push({
         key: item.key,
         name: item.name,
-        lat: parseFloat(item.position.lat),
-        lng: parseFloat(item.position.lng),
+        lat: parseFloat(item.position.lat).toString(),
+        lng: parseFloat(item.position.lng).toString(),
         location: item.location,
         defaultAnimation: this.defaultAnimation,
         zoom: this.zoom
       });
     });
+  }
+
+  @action
+  addUser(user) {
+    this.locationList.push(user);
   }
 
   @action

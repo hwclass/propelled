@@ -28,7 +28,6 @@ class Map extends React.Component {
         <GoogleMapLoader
           containerElement={
             <div
-              {...this.props.containerElementProps}
               style={{
                 height: "100%",
               }}
@@ -38,17 +37,12 @@ class Map extends React.Component {
             <GoogleMap
               key={() => uuid.v1()}
               defaultZoom={1}
-              defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
+              defaultCenter={{ lat: 0.0, lng: 0.0 }}
             >
-              {userLocationListStore.locationList.map((marker, index) => {
+              {userLocationListStore.locationList.slice().map((marker) => {
                 return (
                   <Marker
-                    key={index}
-                    name={marker.name}
-                    lat={marker.lat}
-                    lng={marker.lng}
-                    defaultAnimation={marker.defaultAnimation}
-                    zoom={marker.zoom}
+                    { ...marker }
                   />
                 );
               })}

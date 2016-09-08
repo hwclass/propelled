@@ -8,3 +8,7 @@ export const updateUserList = () => {
       userLocationListStore.setLocationList(data);
     });
 };
+
+export const saveUser = (user) => {
+  userLocationListStore.addUser(user);
+};
