@@ -39,10 +39,14 @@ class Map extends React.Component {
               defaultZoom={1}
               defaultCenter={{ lat: 0.0, lng: 0.0 }}
             >
-              {userLocationListStore.locationList.slice().map((marker) => {
+              {userLocationListStore.getUserList().map((marker) => {
                 return (
                   <Marker
-                    { ...marker }
+                    key={uuid.v4()}
+                    lat={marker.lat}
+                    lng={marker.lng}
+                    defaultAnimation={marker.defaultAnimation}
+                    zoom={marker.zoom}
                   />
                 );
               })}

@@ -15,7 +15,7 @@ export default class UserForm extends React.Component {
   onHandleSubmit(e) {
     e.preventDefault();
     actions.saveUser({
-      key: uuid.v1(),
+      key: uuid.v4(),
       name: ReactDOM.findDOMNode(this.refs.name).value,
       lat: ReactDOM.findDOMNode(this.refs.lat).value,
       lng: ReactDOM.findDOMNode(this.refs.lng).value,

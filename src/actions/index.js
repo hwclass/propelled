@@ -1,6 +1,7 @@
-import { updateUserList, saveUser } from './userList';
+import { getUserList, updateUserList, saveUser } from './userList';
 
 export {
+  getUserList,
   updateUserList,
   saveUser
 };

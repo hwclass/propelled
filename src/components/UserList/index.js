@@ -4,7 +4,6 @@ import User from '../../components/User/';
 import uuid from 'uuid';
 
 @inject('userLocationListStore') @observer
-
 export default class UserList extends React.Component {
 
   constructor(props) {
