@@ -3,7 +3,6 @@ import { forEach, remove, isUndefined } from 'lodash';
 import { DEFAULT_ANIMATION, ZOOM } from '../../constants/map';
 import remotedev from 'mobx-remotedev';
 
-@remotedev
 class UserLocationListStore {
 
   @observable locationList;
@@ -14,7 +13,7 @@ class UserLocationListStore {
     this.zoom = ZOOM;
   }
 
-  @action('Increments the counter')
+  @action('Sets location list')
   setLocationList(locationList) {
     this.removeLocationListItems();
     forEach(locationList, (item) => {
@@ -53,6 +52,6 @@ class UserLocationListStore {
 
 }
 
-export default new UserLocationListStore();
+export default remotedev(new UserLocationListStore());
 
 export { UserLocationListStore };
