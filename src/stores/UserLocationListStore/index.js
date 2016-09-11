@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, toJS } from 'mobx';
 import { forEach, remove, isUndefined } from 'lodash';
 import { DEFAULT_ANIMATION, ZOOM } from '../../constants/map';
 import remotedev from 'mobx-remotedev';
@@ -21,8 +21,10 @@ class UserLocationListStore {
       this.locationList.push({
         key: item.key,
         name: item.name,
-        lat: parseFloat(item.position.lat),
-        lng: parseFloat(item.position.lng),
+        position: {
+          lat: parseFloat(item.position.lat),
+          lng: parseFloat(item.position.lng)
+        },
         location: item.location,
         defaultAnimation: this.defaultAnimation,
         zoom: this.zoom
@@ -43,6 +45,10 @@ class UserLocationListStore {
   @action('Removes location list item')
   removeLocationListItems() {
     remove(this.locationList, !isUndefined);
+  }
+
+  toJS() {
+    return this.locationList.map(location => toJS(location));
   }
 
 }

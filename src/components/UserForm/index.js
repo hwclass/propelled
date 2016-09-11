@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as actions from '../../actions/';
-import { DEFAULT_ANIMATION, ZOOM } from '../../constants/api';
+import { DEFAULT_ANIMATION, ZOOM } from '../../constants/map';
 import Input from '../Input';
 import uuid from 'uuid';
 
@@ -17,8 +17,10 @@ export default class UserForm extends React.Component {
     actions.saveUser({
       key: uuid.v4(),
       name: ReactDOM.findDOMNode(this.refs.name).value,
-      lat: ReactDOM.findDOMNode(this.refs.lat).value,
-      lng: ReactDOM.findDOMNode(this.refs.lng).value,
+      position: {
+        lat: parseFloat(ReactDOM.findDOMNode(this.refs.lat).value),
+        lng: parseFloat(ReactDOM.findDOMNode(this.refs.lng).value)
+      },
       location: ReactDOM.findDOMNode(this.refs.location).value,
       defaultAnimation: DEFAULT_ANIMATION,
       zoom: ZOOM

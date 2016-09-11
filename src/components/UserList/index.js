@@ -16,7 +16,7 @@ export default class UserList extends React.Component {
       <div>
         {
           userLocationListStore.locationList.map((user) => {
-            return <User key={uuid.v1()} name={user.name} lat={user.lat} lng={user.lng} location={user.location}/>;
+            return <User key={uuid.v1()} name={user.name} position={user.position} location={user.location}/>;
           })
         }
       </div>

@@ -9,9 +9,9 @@ export default class User extends React.Component {
   render() {
     return (
       <div>
-        <span>{this.props.name}</span>
-        <span>{this.props.lat}</span>
-        <span>{this.props.lng}</span>
+        <span>{this.props.name}, </span>
+        <span>{this.props.position.lat}, </span>
+        <span>{this.props.position.lng}, </span>
         <span>{this.props.location}</span>
       </div>
     );
@@ -21,8 +21,10 @@ export default class User extends React.Component {
 
 User.propTypes = {
   name: React.PropTypes.string.isRequired,
-  lat: React.PropTypes.number.isRequired,
-  lng: React.PropTypes.number.isRequired,
+  position: React.PropTypes.shape({
+    lat: React.PropTypes.number.isRequired,
+    lng: React.PropTypes.number.isRequired,
+  }),
   location: React.PropTypes.string.isRequired,
   defaultAnimation: React.PropTypes.string,
   zoom: React.PropTypes.string
