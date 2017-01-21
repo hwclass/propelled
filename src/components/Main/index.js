@@ -1,22 +1,18 @@
 import React from 'react';
+
+// Components
 import Map from '../Map';
 import UserList from '../UserList';
 import UserForm from '../UserForm';
 
-export default class Main extends React.Component {
+const Main = () => {
+  return (
+    <div>
+      <UserForm/>
+      <Map/>
+      <UserList/>
+    </div>
+  );
+};
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <UserForm/>
-        <Map/>
-        <UserList/>
-      </div>
-    );
-  }
-
-}
+export default Main;

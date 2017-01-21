@@ -1,4 +1,7 @@
+// Constants
 import { USER_LOCATION_LIST_URL } from '../../constants/api';
+
+// Stores
 import { userLocationListStore } from '../../stores/';
 
 export const updateUserList = () => {

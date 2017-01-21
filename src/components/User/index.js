@@ -1,23 +1,15 @@
 import React from 'react';
 
-export default class User extends React.Component {
-
-	constructor(props) {
-  super(props);
-	}
-
-  render() {
-    return (
-      <div>
-        <span>{this.props.name}, </span>
-        <span>{this.props.position.lat}, </span>
-        <span>{this.props.position.lng}, </span>
-        <span>{this.props.location}</span>
-      </div>
-    );
-  }
-
-}
+const User = ({ name, position, location }) => {
+  return (
+    <div>
+      <span>{name}, </span>
+      <span>{position.lat}, </span>
+      <span>{position.lng}, </span>
+      <span>{location}</span>
+    </div>
+  );
+};
 
 User.propTypes = {
   name: React.PropTypes.string.isRequired,
@@ -29,3 +21,5 @@ User.propTypes = {
   defaultAnimation: React.PropTypes.string,
   zoom: React.PropTypes.string
 };
+
+export default User;
