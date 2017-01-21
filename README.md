@@ -1,6 +1,23 @@
 # 🔥 propelled
 A simple React + MobX + ES6 boilerplate
 
+## Developer Quickstart
+```bash
+
+# Clone the repository
+$ git clone git@github.com:hwclass/propelled.git
+
+# Install Dependencies
+$ npm install
+
+# Run Development Server
+$ npm run start
+
+# Build App for Production
+$ npm run build
+
+```
+
 ## Directory Structure
 ```bash
 .
