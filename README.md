@@ -1,5 +1,5 @@
 # 🔥 propelled
-A simple React + MobX + ES6 boilerplate
+A simple React + MobX + ES7 + Grommet boilerplate
 
 ## Developer Quickstart
 ```bash
@@ -39,3 +39,5 @@ $ npm run build
 └── webpack.prod.config.js  # Webpack config file for production
 ```
 
+## Example Application Screenshot
+<img src="http://i63.tinypic.com/m65pz.png" width="100%" />
