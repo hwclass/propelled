@@ -1,19 +1,21 @@
+// Libraries
 import React from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
+
+// Components
+import Nav from '../Nav';
+import Bottom from '../Bottom';
 
 export default class App extends React.Component {
 
   render() {
-    // const { location, children } = this.props;
     const { children } = this.props;
     // const { pathname, query } = location;
 
     return (
       <div>
-        <Header/>
-        {children}
-        <Footer />
+        <Nav/>
+          {children}
+        <Bottom />
       </div>
     );
   }

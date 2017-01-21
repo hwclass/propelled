@@ -78,6 +78,7 @@
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
+    "grommet": "^1.2.0",
     "lodash": "^4.15.0",
     "mobx": "^2.5.1",
     "mobx-react": "^3.5.5",

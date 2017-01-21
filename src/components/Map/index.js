@@ -1,14 +1,17 @@
+// Libraries
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 import { GoogleMapLoader, GoogleMap, Marker } from "react-google-maps";
-import * as actions from '../../actions/';
 import uuid from 'uuid';
 
+// Actions
+import * as actions from '../../actions/';
+
+// Styles
 import './style/index.scss';
 
 @inject('userLocationListStore') @observer
 class Map extends React.Component {
-
   constructor(props) {
     super(props);
   }

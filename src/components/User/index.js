@@ -1,13 +1,17 @@
+// Libraries
 import React from 'react';
+
+// Components
+import TableRow from 'grommet/components/TableRow';
 
 const User = ({ name, position, location }) => {
   return (
-    <div>
-      <span>{name}, </span>
-      <span>{position.lat}, </span>
-      <span>{position.lng}, </span>
-      <span>{location}</span>
-    </div>
+    <TableRow>
+      <td>{name}</td>
+      <td className="secondary">{position.lat}</td>
+      <td className="secondary">{position.lat}</td>
+      <td className="secondary">{location}</td>
+    </TableRow>
   );
 };
 
