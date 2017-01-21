@@ -6,13 +6,13 @@ A simple React + MobX + ES6 boilerplate
 .
 ├── dist                    # Built version to be ready for production
 ├── src                     # Source code of the project
-│   ├── actions				      # Action declerations for stores triggered in views
-│   ├── components		      # Self-contained React components
-│   ├── constants			      # Some string declerations for configuration
-│	  ├── models 				      # Models to generate for stores and changes with actions
-│	  ├── modules 			      # Modules containing components like containers
-│	  ├── stores				      # Store directory that exposes the main data source of the client
-│	  └── index.js 			      # Entry point of the application containing App and Main components
+│   ├── actions             # Action declerations for stores triggered in views
+│   ├── components          # Self-contained React components
+│   ├── constants           # Some string declerations for configuration
+│	  ├── models              # Models to generate for stores and changes with actions
+│	  ├── modules             # Modules containing components like containers
+│	  ├── stores              # Store directory that exposes the main data source of the client
+│	  └── index.js            # Entry point of the application containing App and Main components
 ├── .eslintrc               # ESLint rule file
 ├── .flowconfig 			      # Facebook Flow config file 
 ├── .gitignore				      # Git file/directory excluding file 
