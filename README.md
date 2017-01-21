@@ -14,12 +14,12 @@ A simple React + MobX + ES6 boilerplate
 │	  ├── stores              # Store directory that exposes the main data source of the client
 │	  └── index.js            # Entry point of the application containing App and Main components
 ├── .eslintrc               # ESLint rule file
-├── .flowconfig 			      # Facebook Flow config file 
-├── .gitignore				      # Git file/directory excluding file 
+├── .flowconfig             # Facebook Flow config file 
+├── .gitignore              # Git file/directory excluding file 
 ├── LICENCE.md              # Licence file
-├── README.md 				      # Readme file with instructions
-├── package.json 			      # Package file for npm 
-├── webpack.config.js 		  # Webpack config file for development
+├── README.md               # Readme file with instructions
+├── package.json            # Package file for npm 
+├── webpack.config.js       # Webpack config file for development
 └── webpack.prod.config.js  # Webpack config file for production
 ```
 
